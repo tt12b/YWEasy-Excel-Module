@@ -25,3 +25,32 @@
 - 행 / 시트 / Woorkbook 객체를 빌더 패턴으로 손쉽게 생성
 
 - 기본 스타일 지원
+
+## ✨ 설치 방법
+
+### - Gradle
+dependencies {
+    implementation files('libs/YWEasyExcel-0.0.1.jar')
+}
+
+### - Maven
+<dependency>
+    <groupId>com.yuwoong</groupId>
+    <artifactId>YWEasyExcel</artifactId>
+    <version>0.0.1</version>
+    <scope>system</scope>
+    <systemPath>${project.basedir}/libs/YWEasyExcel-0.0.1.jar</systemPath>
+</dependency>
+
+
+## ✨ 사용 예시
+* 		return EasyWorkBook
+  		.builder()
+  		.workbookName("Excel Name")
+  		.addSheet(EasySheet.builder()
+  			.sheetName("Sheet_1")
+  			.addSheetStyle(DEFAULT)
+  			.freezePane(0, 1)
+  			.addRowsAtEnd(rows)
+  			.build())
+  		.build().toResponseEntity();
